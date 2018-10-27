@@ -1,2 +1,13 @@
-<h1>StaticPages#index</h1>
-<p>Find me in app/views/static_pages/index.html.erb</p>
+<title>Flickr API Project</title>
+<h1>Flickr Account Finder</h1>
+
+<%= form_for :search, method: :get do |f| %>
+  <%= f.label :user %>
+  <%= f.text_field :user %>
+
+  <%= f.submit "Submit" %>
+<% end %>
+
+<% @results.each do |result| %>
+  <%= image_tag(result.url_m) %>
+<% end %>
